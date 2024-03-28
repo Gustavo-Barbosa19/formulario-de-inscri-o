@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function salvar(){
+            let form= document.getElementById("form-cadastro")
+            let nome = form.nome.value
+            let email = form.email.value
+            let senha = form.senha.value
+            if(nome.trim() == ""){
+                alert("Preencha o nome")
+                return false
+            }
+            if(email.trim() == ""){
+                alert("Preencha o E-mail")
+                return false
+            }
+            if(senha.trim() == ""){
+                alert("Preencha a senha")
+                return false
+            }
+            alert("Cadastrado com sucesso")
+        }
+    </script>
+</head>
+<body>
+    <form id="form-cadastro" onsubmit="return false">
+        <div class="linha">
+            <label>Nome</label>
+            <input type="text" name="nome" maxlength="40"/>
+        </div>
+        <div class="linha">
+            <label>E-mail</label>
+            <input type="email" name="email" maxlength="80"/>
+        </div>
+        <div class="linha">
+            <label>Senha</label>
+            <input type="password" name="senha" maxlength="15">
+        </div>
+        <div class="linha">
+            <label>Estado</label>
+            <select name="estado">
+                <option value="SP">São Paulo</option>
+                <option value="RJ">Rio de Janeiro</option>
+            </select>
+        </div>
+        <input type="submit" name="enviar" value="Cadastrar" onclick="salvar()" />
+    </form>
+</body>
+</html>
